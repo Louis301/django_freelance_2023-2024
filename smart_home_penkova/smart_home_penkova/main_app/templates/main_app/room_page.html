@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>mobile</title>
+</head>
+<body>
+    <div class="container" id="room_page-bg"> 
+        <div class="header">
+            <div class="header-item">
+                <p class="room_page-title">{{room.name}}</p>
+            </div>
+            <div class="header-item">
+                <div class="back-btn">
+                    <a href="{% url 'rooms' %}"><img src="{% static 'img/back_btn.svg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="devices">
+            <form action="{% url 'room_page' room.name %}" method="post">
+                {% csrf_token %}         
+                <button type="submit" name="device_btn" value="fan">
+                    <div class="device">
+                        {% if room.fan %}
+                            <img src="{% static 'img/devices_on/fan.svg' %}" alt="">
+                        {% else %}
+                            <img src="{% static 'img/devices_off/fan.svg' %}" alt="">
+                        {% endif %}
+                    </div>
+                </button>
+                <button  type="submit" name="device_btn" value="light">
+                    <div class="device">
+                        {% if room.light %}
+                            <img src="{% static 'img/devices_on/light.svg' %}" alt="">
+                        {% else %}
+                            <img src="{% static 'img/devices_off/light.svg' %}" alt="">
+                        {% endif %}
+                    </div>
+                </button>
+                <button type="submit" name="device_btn" value="heater">
+                    <div class="device">
+                        {% if room.heater %}
+                            <img src="{% static 'img/devices_on/heater.svg' %}" alt="">
+                        {% else %}
+                            <img src="{% static 'img/devices_off/heater.svg' %}" alt="">
+                        {% endif %}
+                    </div>
+                </button>
+                <button type="submit" name="device_btn" value="player">
+                    <div class="device">
+                        {% if room.player %}
+                            <img src="{% static 'img/devices_on/player.svg' %}" alt="">
+                        {% else %}
+                            <img src="{% static 'img/devices_off/player.svg' %}" alt="">
+                        {% endif %}
+                    </div>
+                </button>
+            </form>
+        </div>
+
+        <div id="room-params">
+            <p>{{room.temperature}}°С</p>
+            <div class="">
+                <img src="{% static 'img/icn_waterdrop.svg' %}" alt="">
+                <span>{{room.humidity}}%</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

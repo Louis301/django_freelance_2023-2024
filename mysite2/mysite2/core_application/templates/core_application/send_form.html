@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'core_application/css/style.css' %}">
+    <title>mysite2 (Lipuhina)</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-sended">
+            <img src="{% static 'core_application/img/checkmark_checked.png' %}" alt="форма отправлена">
+            <h1 class="form-sended-title">Форма отправлена</h1>
+            <a class="btn-to-index" href="{% url 'index' %}">на главную</a>
+        </div>
+    </div>
+
+</body>
+</html>

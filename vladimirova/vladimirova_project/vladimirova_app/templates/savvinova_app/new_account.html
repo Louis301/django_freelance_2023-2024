@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/new_account_styles.css' %}">
+  <title>Регистрация</title>
+</head>
+<body>
+  <section class="screen-container">
+    <header>
+      <div class="gradient-line-1"></div>
+      <div class="gradient-line-2"></div>
+      <div class="gradient-line-3">
+        <h2>Регистрация</h2>
+        <a class="back-btn" href="{% url 'index' %}"><img src="{% static 'img/cross.svg' %}" alt=""></a>        
+      </div>
+    </header>
+    <div class="registration-form">
+			<form action="" method="post">
+				{% csrf_token %}
+        <div class="registration-form-fields">
+          <input class="form-field" type="mail" name="field_mail" placeholder="почта" value="{{m}}" required>
+          <input class="form-field" type="password" name="field_password" placeholder="пароль" value="{{p}}" required>
+          <input class="form-field" type="password" name="field_password_repeat" placeholder="повтор пароля" value="{{pr}}" required>
+          <input class="form-field" type="text" name="field_name" placeholder="фамилия/имя" value="{{n}}" required>
+        </div>
+				<button class="form-btn" name="reg_btn" value="" type="submit">
+					<img src="{% static 'img/marker.svg' %}" alt="">
+				</button>
+        <br>
+        {% if aa == 'on' %}
+          <input class="agreement-accept-check" type="checkbox" name="agreement_accept" checked>
+        {% else %}
+          <input class="agreement-accept-check" type="checkbox" name="agreement_accept">
+        {% endif %}
+        <div class="agreement-accept-text">
+          <p>принимаю <strong>Пользовательское<br>соглашение</strong></p>
+        </div>
+      </form>
+		</div>
+    {% if msg_danger %}
+			<div class="msg-danger"><p>{{msg_danger}}</p></div> 
+    {% elif msg_success %}
+      <div class="msg-success"><p>{{msg_success}}</p></div> 
+		{% endif %}
+  </section>
+</body>
+</html>

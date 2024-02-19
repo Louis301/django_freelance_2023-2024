@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/plan_styles.css' %}">
+  <title>План</title>
+</head>
+<body>
+  <section class="screen-container">
+    <header>
+      <div class="gradient-line-1"></div>
+      <div class="gradient-line-2">
+        <h2>{{account.name}}</h2>
+        <a class="header-btn" href="{% url 'index' %}"><img src="{% static 'img/door.svg' %}" alt=""></a>        
+      </div>
+      <div class="gradient-line-3">
+        <h2>План</h2>
+        <a class="header-btn" href="{% url 'new_task' account.id %}"><img src="{% static 'img/note.svg' %}" alt=""></a>        
+      </div>
+    </header>
+    <section class="tasks">
+      {% for a_task in active_tasks %}
+        <span><b>до {{a_task.deadline}}</b></span>
+        <div class="task">
+          <p>{{a_task}}
+            {% if a_task.parent_task != '-' %}
+              <br>
+              <span><b>(родитель -> {{a_task.parent_task}})</b></span>
+            {% endif %}
+          </p>
+          <div class="task-btns">
+            <a class="task-btn-close" href="{% url 'close_task' a_task.id %}"><img src="{% static 'img/squire.svg' %}" alt=""></a>
+            <a class="task-btn-remove" href="{% url 'remove_task' a_task.id %}"><img src="{% static 'img/cross.svg' %}" alt=""></a>
+          </div>
+        </div>
+      {% endfor %}
+      <hr>
+      {% for c_task in closed_tasks %}
+        <div class="task">
+          <p><s>{{c_task}}</s></p>
+          <div class="task-btns">
+            <a class="task-btn-remove" href="{% url 'remove_task' c_task.id %}"><img src="{% static 'img/cross.svg' %}" alt=""></a>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  </section>
+</body>
+</html>

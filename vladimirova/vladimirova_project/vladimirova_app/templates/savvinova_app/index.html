@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static '/css/index_styles.css' %}">
+	<title>Главная</title>
+</head>
+<body>
+	<section class="screen-container">
+		<header>
+			<div class="gradient-line-1"></div>
+			<div class="gradient-line-2"></div>
+			<div class="gradient-line-3"><h1>Rheolwr<br>Tasgau</h1></div>
+		</header>
+		<div class="gradient-line-4"></div>
+		<div class="auth-form">
+			<form action="" method="post">
+				{% csrf_token %}
+				<input class="form-field" type="mail" name="field_mail" placeholder="почта" required>
+				<input class="form-field" type="password" name="field_password" placeholder="пароль" required>
+				<button class="form-btn" name="auth_btn" value="" type="submit">
+					<img src="{% static 'img/arrow.svg' %}" alt="">
+				</button>
+			</form>
+		</div>
+		<footer>
+			<a class="light-btn" href="#">не помню пароль</a>
+			<a class="light-btn" href="{% url 'new_account' %}">нет аккаунта</a>
+		</footer>
+		{% if msg %}
+			<div class="msg-danger"><p>{{msg}}</p></div> 
+		{% endif %}
+	</section>
+</body>
+</html>

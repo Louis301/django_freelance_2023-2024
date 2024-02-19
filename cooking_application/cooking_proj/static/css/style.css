@@ -1,0 +1,330 @@
+@font-face {
+	font-family: 'Arizonia'; 
+	src: url(/static/fonts/Arizonia-Regular.ttf); 
+}
+@font-face {
+	font-family: 'Inter'; 
+	src: url(/static/fonts/Inter-Regular.otf); 
+}
+body {
+    background-color: #BDBDBD;
+    margin: 0;
+}
+.container {
+    width: 360px;
+    min-height: 800px;
+    margin: 0 auto;
+    background: url(/static/img/wood_bg.png);
+    padding-top: 32px;
+    color: #ffffff;
+}
+.food-header {
+    width: 100%;
+    background: #E4C105;
+    margin-bottom: 32px;
+    color: #000000;
+}
+.food-header p {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Arizonia'; 
+    margin: 0;
+    padding: 12px 0;
+}
+.categories {
+    padding: 0px 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-item {
+    align-items: center;
+}
+.category-item img {
+    width: 86px;
+    height: 86px;
+    border-radius: 6px;
+}
+.category-item-default {
+    border: 2px solid #D9D9D9;
+}
+.category-item-selected {
+    border: 2px solid #C31717;
+}
+.category-item p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Inter'; 
+    padding-top: 6px;
+}
+
+
+.dishes {
+    padding: 0px 29px;
+}
+.dish-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+.dish-item-img {
+    width: 82px;
+    height: 82px;
+    border: 1px solid #F2F3ED;
+}
+.dish-item-text {
+    font-family: 'Inter';
+    font-style: normal;
+    padding-left: 12px;
+}
+.dish-item-title {
+    color: #F2F3ED;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-decoration-line: underline;
+    margin: 0;
+    padding-bottom: 12px;
+}
+.dish-item-description {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    margin: 0;
+}
+.dish-price-and-remove-btn {
+    color: #FFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    min-width: 56px;
+}
+.dish-price {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 5px;
+
+    display: inline-block;
+}
+.dish-price span {
+    font-size: 16px;
+}
+.to-cart-btn {
+    display: inline-block;
+}
+.to-cart-btn img {
+    padding-top: 5px;
+    transform: translateY(14%);
+}
+.dish-item-img-and-price {
+    text-align: center;
+}
+.navigation {
+    margin-top: 40px;
+    padding: 0px 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 36px;
+}
+.navigation-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation-btn-selected {
+    background-color: #4D4D4D;
+}
+.navigation-btn img {
+    width: 30px;
+    height: 30px;
+}
+.navigation-btn:active {
+    border: 1px solid #4D4D4D;
+}
+
+.cart-header {
+    width: 100%;
+    background: #264653;
+    margin-bottom: 32px;
+    border-top: 1px solid #F2F3ED;
+    border-bottom: 1px solid #F2F3ED;
+}
+.cart-header p {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Arizonia'; 
+    margin: 0;
+    padding: 12px 0;
+    color: #ffffff;
+
+}
+.cart-header-ru {
+    color: #ffffff;
+    border-top: 1px solid #F2F3ED;
+    border-bottom: 1px solid #F2F3ED;
+    text-align: center;
+    margin: 0px 29px;
+    padding: 12px 0px;
+    font-family: 'Inter';
+    font-size: 22px;
+}
+.to-order-list-btn {
+    font-family: 'Inter';
+    font-size: 14px;
+    background-color: #DFC123;
+    color: #000000;
+    text-decoration: None;
+    padding: 4px 13px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.select-order-btn {
+    text-decoration: None;
+    display: inline-block;
+    transform: translateY(2px);
+    margin-right: 5px;
+}
+.select-order-btn div {
+    background-color: None;
+    border: 2px solid #F2F3ED;
+    width: 17px;
+    height: 17px;
+}
+.dish-item-description-cart {
+    margin-bottom: 10px;
+}
+.quantity-control {
+    margin-right: 6px;
+}
+.quantity-control p {
+    margin: 2px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 18px;
+}
+.remove-btn a {
+    border: 2px solid #C31717;
+    background-color: #F2F3ED;
+    border-radius: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 26px;
+}
+.to-order-list-big-btn {
+    color: #000000;
+    font-family: 'Inter';
+    font-size: 18px;
+    text-decoration: none;
+}
+.to-order-list-big-btn div {
+    background-color: #E4C105;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 29px;
+    padding: 10px 0px;
+    margin-top: 40px;
+}
+.to-order-list-big-btn div:active {
+    background-color: #A78E0C;
+}
+.to-order-list-btn:active {
+    background-color: #A78E0C;
+}
+
+.select-order-btn-active {
+    background-color: #4D4D4D;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders-header {
+    width: 100%;
+    background: #C96464;
+    margin-bottom: 32px;
+}
+.orders-header p {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Arizonia'; 
+    margin: 0;
+    padding: 12px 0;
+    color: #000000;
+
+}
+.orders-header-ru {
+    color: #ffffff;
+    border-top: 1px solid #F2F3ED;
+    border-bottom: 1px solid #F2F3ED;
+    text-align: center;
+    margin: 0px 29px;
+    padding: 12px 0px;
+    font-family: 'Inter';
+    font-size: 22px;
+}
+.dish-price-orders {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 3px 5px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 1px;
+}
+.dish-quantity {
+    font-family: 'Inter';
+    font-size: 14px;
+    display: inline-block;
+}
+.dish-quantity span {
+    font-size: 16px;
+}
+.total-values {
+    padding-top: 20px;
+    margin: 0px 29px;
+}
+.total-values-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7px;
+}
+.total-values-item p {
+    font-family: 'Inter';
+    font-size: 18px;
+    margin: 0;
+}
+.total-values-item span {
+    font-size: 29px;
+    margin: 0;
+}
+.cancel-order-btn {
+    color: #ffffff;
+    font-family: 'Inter';
+    font-size: 18px;
+    text-decoration: none;
+}
+.cancel-order-btn div {
+    background-color: #C31717;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 29px;
+    padding: 10px 0px;
+    margin-top: 30px;
+}
+.cancel-order-btn div:active {
+    background-color: #880404;
+}

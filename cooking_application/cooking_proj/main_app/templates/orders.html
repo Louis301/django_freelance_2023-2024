@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Заказы</title>
+</head>
+<body>
+    <div class="container">
+        <div class="orders-header"><p>Orders</p></div>
+        <p class="orders-header-ru">Заказы</p>
+        <div class="dishes">
+            {% for dish in dishes %}
+                <div class="dish-item">
+                    <img class="dish-item-img" src="{% static 'media/' %}{{dish.photo}}" alt="{{dish.photo}}">
+                    <div class="dish-item-text">
+                        <p class="dish-item-title">{{dish.title}}</p>
+                        <p class="dish-item-description ">{{dish.description}}</p>
+                        <p class="dish-price dish-price-orders">{{dish.price}}<span> р.</span></p>
+                        <p class="dish-quantity">Количество: <span>{{dish.quantity}}</span></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="total-values">
+            <div class="total-values-item">
+                <p>Общая стоимость (руб.)</p>
+                <span>{{total_price}}</p>
+            </div>
+            <div class="total-values-item">
+                <p>Общее количество (шт.)</p>
+                <span>{{total_quantity}}</span>
+            </div>
+        </div>
+        <a class="cancel-order-btn" href="{% url 'cancel_order' %}"><div>отменить заказ</div></a>
+        <div class="navigation">
+            <a class="navigation-btn" href="{% url 'menu_path' %}">
+                <img src="{% static 'img/menu_img.svg' %}" alt="menu_img">
+            </a>
+            <a class="navigation-btn" href="{% url 'cart_path' %}">
+                <img src="{% static 'img/cart_img.svg' %}" alt="cart_img">
+            </a>
+            <a class="navigation-btn navigation-btn-selected" href="{% url 'orders_path' %}">
+                <img src="{% static 'img/orders_img.svg' %}" alt="orders_img">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

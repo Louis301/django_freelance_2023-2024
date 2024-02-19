@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Cooking</title>
+</head>
+<body>
+    <div class="container">
+        <div class="food-header"><p>Food</p></div>  
+        <div class="categories">
+            {% for category in categories %}
+                <div class="category-item">
+                    <a href="{% url 'menu_path' category.title %}">
+                        {% if category.title == selected_category %}
+                            <img class="category-item-selected" src="{% static 'media/' %}{{category.photo}}" alt="{{category.photo}}">
+                        {% else %}
+                            <img class="category-item-default" src="{% static 'media/' %}{{category.photo}}" alt="{{category.photo}}">
+                        {% endif %}
+                    </a>
+                    <p>{{category.title}}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="dishes">
+            {% for dish in dishes %}
+                <div class="dish-item">
+                    <div class="dish-item-img-and-price">
+                        <img class="dish-item-img" src="{% static 'media/' %}{{dish.photo}}" alt="{{dish.photo}}">
+                        <p class="dish-price">{{dish.price}}<span> р.</span></p>
+                        <a class="to-cart-btn" href="{% url 'add_to_cart' dish.id %}">
+                            <img src="{% static 'img/cart_img.svg' %}" alt="cart_img">
+                        </a>
+                    </div>
+                    <div class="dish-item-text">
+                        <p class="dish-item-title">{{dish.title}}</p>
+                        <p class="dish-item-description">{{dish.description}}</p>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="navigation">
+            <a class="navigation-btn navigation-btn-selected" href="{% url 'menu_path' selected_category %}">
+                <img src="{% static 'img/menu_img.svg' %}" alt="menu_img">
+            </a>
+            <a class="navigation-btn" href="{% url 'cart_path' %}">
+                <img src="{% static 'img/cart_img.svg' %}" alt="cart_img">
+            </a>
+            <a class="navigation-btn" href="{% url 'orders_path' %}">
+                <img src="{% static 'img/orders_img.svg' %}" alt="orders_img">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

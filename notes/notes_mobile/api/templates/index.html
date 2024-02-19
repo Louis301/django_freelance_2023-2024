@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-color: #606060;
+        }
+
+        .phone-screen {
+            width: 320px;
+            max-width: 320px;
+            background-color: #324D80;
+            margin: 0 auto;
+            padding: 27px ;
+            font-family: sans-serif;
+            min-height: 568px;
+        }
+
+        .phone-screen-title {
+            font-family: sans-serif;
+            color: white;
+            text-align: right;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            margin-bottom: 37px;
+        }
+
+        .create-note-button {
+            width: 100%;
+            background-color: #8B8B8B;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #555;
+            margin-bottom: 37px;
+        }
+
+        .create-note-button-a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            background: #8B8B8B;
+        }
+
+        .create-note-button:hover {
+            background: #555;
+            color: #8B8B8B;
+        }
+
+        .create-note-button:active {
+            background: #555;
+            color: #8B8B8B;
+        }
+
+        .note {
+            margin-bottom: 20px;
+            max-width: 310px;
+        }
+
+        .delete-note-button {
+            color: #FFF;
+            text-align: center;
+            font-size: 12px;
+            border-radius: 5px;
+            border: 1px solid #8C1F1F;
+            background: #B00000;
+            padding: 4px 20px;
+            text-decoration: none;
+        }
+
+        .delete-note-button:hover {
+            background: #8C1F1F;
+            color: #8B8B8B;
+        }
+
+        .delete-note-button:active {
+            background: #8C1F1F;
+            color: #8B8B8B;
+        }
+
+        .edit-note-button {
+            color: #000;
+            text-align: center;
+            font-size: 12px;
+            border-radius: 5px;
+            border: 1px solid #8A7508;
+            background: #EBBB11;
+            padding: 4px 20px;
+        }
+
+        .edit-note-button:hover {
+            background: #8A7508;
+            cursor: pointer;
+        }
+
+        .edit-note-button:active {
+            background: #8A7508;
+            cursor: pointer;
+        }
+
+        .note-field {
+            border-radius: 5px;
+            background: #FFF;
+            width: 100%;
+            color: #000;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+    </style>
+
+    <section class="phone-screen">
+        <h2 class="phone-screen-title"> Notes</h2>
+
+        <a class="create-note-button-a" href="{% url 'createNote' %}">
+            <div class="create-note-button">создать</div>
+        </a>
+        
+        {% for note in notes %}
+            <form class="note" action="{% url 'updateNote' note.id %}" method="post">
+                {% csrf_token %}
+                <textarea class="note-field" name="note" cols="30" rows="3">{{note}}</textarea>
+                <div class="note-buttons">
+                    <a class="delete-note-button" href="{% url 'deleteNote' note.id %}">удалить</a>
+                    <input class="edit-note-button" type="submit" name="send" value="сохранить">
+                </div>
+            </form>              
+        {% endfor %}
+        
+    </section>
+    
+</body>
+</html>

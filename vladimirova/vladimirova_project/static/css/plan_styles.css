@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    background-color: #1E1E1E;
+  }
+  .screen-container {
+    width: 428px;
+    min-height: 926px;
+    margin: auto;
+    background: #ffffff;
+  }
+
+  /* фон */
+  .gradient-line-1 {
+    background-color: #3E1C03;
+    height: 58px;
+  }
+  .gradient-line-2 {
+    background-color: #883C05;
+    padding: 26px 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gradient-line-3 {
+    background-color: #E06D1A;
+    padding: 30px 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* тексты */
+  .gradient-line-2 h2 {
+    color: #FFF;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.72px;
+    margin: 0;
+  }
+  .gradient-line-3 h2 {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; 
+    letter-spacing: 0.72px;
+    margin: 0;
+  }
+  .header-btn img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* кнопки */
+  .header-btn {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+
+  .tasks {
+    padding: 58px 42px 61px 42px;
+  }
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 40px;
+  }
+  .tasks span {
+    color: #1E1E1E;
+    text-align: left;
+    font-family: Jura;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+    margin: 0; 
+  }
+  .task p {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    width: 261px;
+    text-align: left;
+    margin: 0;
+  }
+  .task-btns {
+    align-items: center;
+    height: 20px;
+  }
+  .task-btn-close {
+    align-items: center;
+    margin-right: 10px;
+  }
+  .task-btn-remove {
+    align-items: center;
+  }

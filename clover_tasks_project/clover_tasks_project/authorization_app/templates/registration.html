@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chernoyarova</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'auth' %}">
+            <img class="back-btn" src="{% static 'img/back-arrow.svg' %}" alt="стрелка назад">
+        </a>
+        <h1>Регистрация</h1>
+        <form action="{% url 'registration' %}" method="post">
+            {% csrf_token %}
+            <input class="user-auth" type="text" name="user_name" required placeholder="имя">
+            <p class="user-auth-hint">придумайте логин для входа <br>в приложение</p>
+            <button class="auth-btn" type="submit" name="reg_btn">сохранить</button>
+        </form>
+    </div>
+</body>
+</html>

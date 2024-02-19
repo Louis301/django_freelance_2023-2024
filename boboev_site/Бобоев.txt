@@ -1,0 +1,20 @@
+
+
+АККАУНТЫ
+
+
+mail.ru
+------------------------------------------
+mail:  		boboyev.shokhrom@mail.ru
+password:  	aR,ytsoAIR12
+
+
+github
+------------------------------------------
+mail:  		boboyev.shokhrom@mail.ru
+password:  	aR,ytsoAIR12
+login:  	boboyev2024
+
+
+
+https://github.com/boboyev2024/rsp_practice_2024

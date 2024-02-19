@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОРСП, ИСТБ-41, Тарас Лябаш</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Музыкальная библиотека</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        Загрузка трека:
+        {{form.track}}
+        <input type="submit" value="Submit">
+    </form>
+    {% if tracks %}
+        <ul>
+            {% for track in tracks %}
+            <li>
+                <figure>
+                    <figcaption>{{track.track}}</figcaption>
+                        <audio controls src="/static/media/{{track.track}}"></audio>
+                    <a href="/static/media/{{track.track}}"> Download audio </a>
+                    </audio>
+                </figure>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No tracks</h2>
+    {% endif %}
+</body>
+</html>

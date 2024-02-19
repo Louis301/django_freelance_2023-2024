@@ -1,0 +1,202 @@
+.container {
+    max-width: 374px;
+    width: 374px;
+    margin: 0px auto;
+    background-color: #fff;
+}
+body {
+    background-color: #AFAFAF;
+    margin: 0;
+}
+#main-bg{
+    height: 745px;
+    display: block;
+    background-color: #fff;
+    background-image: url("/static/img/Rectangle\ 1.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 67px;
+}
+.logo {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3.2px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 52px;
+    margin-left: 52px;
+}
+.logo img {
+    margin-top: 60px;
+}
+.start-btn {
+    margin-top: 142px;
+    text-align: center;    
+}
+
+
+
+#rooms-bg{
+    height: 720px;
+    display: block;
+    background-color: #fff;
+    padding-top: 91px;
+}
+.rooms {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 37px;
+    margin-left: 33px;
+    margin-right: 33px;
+}
+.rooms-title {
+    color: #656565;
+    font-family: SF Pro Display;
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 45px;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-item {
+    width: 50%;
+    box-sizing: border-box;
+    font-family: SF Pro Display;
+    font-size: 18px;
+    font-weight: 300;
+}
+.back-btn {
+    text-align: right;    
+    margin-right: 28px;
+    margin-left: auto;
+    transform: translateY(-20%);
+}
+.header-item p {
+    color: #000;
+    margin: 0;
+}
+.header-item span {
+    color: #A5A5A5;
+    margin: 0;
+}
+.flash-icn {
+    margin-left: 45px;
+}
+.header-item-3 {
+    width: 26%;
+    margin-top: 10px;
+} 
+.header-item-4 {
+    margin-top: 10px;
+}
+.rooms-item {
+    font-family: SF Pro Display;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 16px;
+    width: 130px;
+    height: 130px;
+    box-sizing: border-box;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    padding-left: 23px;
+    padding-top: 15px;
+}
+.rooms-item p {
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #A5A5A5;
+    font-weight: 700;
+}
+.rooms-item span {
+    margin: 0;
+    color: #A5A5A5;
+    font-weight: 300;
+}
+.rooms a {
+    text-decoration: none;
+}
+
+
+#room_page-bg{
+    height: 720px;
+    display: block;
+    background-color: #fff;
+    padding-top: 91px;
+}
+.room_page-title {
+    text-transform: capitalize;
+    color: #000;
+    font-family: SF Pro Display;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.96px;
+    padding-left: 21px;
+    transform: translateY(-20%);
+}
+.devices {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 45px;
+}
+.device {
+    text-align: center;
+    width: 25%;
+    box-sizing: border-box;
+}
+#room-params{
+    height: 250px;
+    display: block;
+    background-color: #fff;
+    background-image: url("/static/img/room_params.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    margin-top: 84px;
+}
+#room-params p {
+    font-family: SF Pro Display;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #FFF;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-top: 85px;
+}
+
+#room-params span {
+    color: #FFF;
+    text-align: center;
+    font-family: SF Pro Display;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+.devices form button {
+    background-color: #ffffff;
+    border: none;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+.devices form button:hover {
+    cursor:pointer;
+}

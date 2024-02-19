@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Новое фото</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-screen-title">Новое фото</div>
+        <form class="note-form" action="{% url 'adding' %}" method="post">
+            {% csrf_token %}
+            <input class="field" type="text" name="photo_title" placeholder="Название фотографии" required>  
+            <input class="field" type="text" name="photo_category" placeholder="Категория" required>
+            <input class="field" class="note-form-input-promo" type="text" name="photo_ref" placeholder="URL-ссылка" required>
+            <textarea class="field" type="text" name="photo_comment" rows="2" placeholder="Впечатление" required></textarea>
+            <input class="main-screen-btn adding-screen-btn-send" type="submit" name="add_note" value="Сохранить">
+        </form>
+        <a class="main-screen-btn adding-screen-btn-to-home" href="{% url 'main' %}">На главную</a>
+    </div>
+</body>
+</html>

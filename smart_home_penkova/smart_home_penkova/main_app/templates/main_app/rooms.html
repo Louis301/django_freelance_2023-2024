@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>mobile</title>
+</head>
+<body>
+    <div class="container" id="rooms-bg"> 
+        <div class="header">
+            <div class="header-item">
+                <p class="rooms-title">Rooms</p>
+            </div>
+            <div class="header-item">
+                <div class="back-btn">
+                    <a href="{% url 'main' %}"><img src="{% static 'img/back_btn.svg' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="header-item header-item-3">
+                <img class="flash-icn" src="{% static 'img/flash_icn.svg' %}" alt="">
+            </div>
+            <div class="header-item header-item-4">
+                <p>{{total_voltage}} Kwh</p>
+                <span>Power use for today</span>
+            </div>
+        </div>
+
+        <div class="rooms">
+            {% for room in rooms %}
+                <a href="{% url 'room_page' room.name %}">
+                    <div class="rooms-item">
+                        <img src="/static/img/rooms/{{room.name}}.svg" alt="{{room.name}}">
+                        <p>{{room.name}}</p>
+                        <span>{{room.devices_quantity}} devices</span>
+                    </div>
+                </a>    
+            {% endfor %}            
+        </div>
+
+    </div>
+</body>
+</html>

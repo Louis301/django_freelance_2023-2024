@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Индивидуальный проект</title>
+</head>
+<body>
+    <h1>Отзывы выпускников</h1>
+    {% for item in alumni_reviews %}
+        <p>{{item}}</p>
+    {% endfor %}
+    <hr>
+    <h2>Оставить отзыв</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p><input type="text" name="fullname" placeholder="Представьтесь, пожалуйста" required></p>
+        <p><input type="text" name="group" placeholder="Укажите свою группу" required></p>
+        <p><input type="date" name="release_year" placeholder="Укажите дату выпуска" required></p>
+        <p><input type="text" name="slogan" placeholder="Придумайте короткий слоган" required></p>
+        <p><textarea type="text" name="feedback_text" placeholder="Сообщите ваши впечатления" required></textarea></p>
+        <p><input type="submit" name="send" value="Отправить"></p>
+    </form>
+    <a href="{% url 'start_page'%}">Назад</a>  
+</body>
+</html>

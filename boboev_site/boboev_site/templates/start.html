@@ -1,0 +1,218 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/modal.css' %}">
+    <title>Бобоев, индивидуальный проект</title>
+</head>
+
+<body>    
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo"> 
+                    <img src=" {% static 'img/logo.png' %}" width="182" height="81" alt="Здеcь должно быть LOGO">
+                </div>
+                <nav class="main-menu"> 
+                    <ul>
+                        <li><a href="{% url 'program_page' %}">Программа обучения</a></li>
+                        <li><a href="#feedback">Выпускники</a></li>
+                        <li><a href="#instruction">Как поступить</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="promo">
+                <div class="promo-title">Учёба ещё никогда не была такой интересной!</div>
+                <p>Обучаем готовых к трудоустройству специалистов на теоретических и практических курсах.</p>
+                <a href="#instruction" class="btn btn-green">Подать заявку</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-item">
+                <div class="features-icon features-icon-schedule"></div>
+                <h2 class="features-title">Гибкий график обучения</h2>
+                <p>Современный темп жизни требует гибкого подхода к расписанию.</p>
+            </div>
+            <div class="features-item">
+                <div class="features-icon features-icon-practice"></div>
+                    <h2 class="features-title">Практические занятия</h2>
+                    <p>На одной теории далеко не уедешь, поэтому мы обучаем на практике.</p>
+            </div>
+            <div class="features-item">
+                <div class="features-icon features-icon-work"></div>
+                    <h2 class="features-title">Не оставим без работы</h2>
+                    <p>Хорошие специалисты всегда в цене и Вы станете именно таким.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="feedback">
+        <div class="container">
+            <h2 class="feedback-title">Отзывы выпускников</h2>
+            <a href="{% url 'reviews_page' %}" class="feedback-all">Показать всё</a>
+            <div class="feedback-item">
+                <div class="feedback-author">
+                    <img src="{% static 'img/user.jpg' %}" width="133" height="133" alt="Иванов">
+                    <h3>{{alumni_review.fullname}}</h3>
+                    <p>Группа: {{alumni_review.group}}<br> Выпуск: {{alumni_review.release_year}} г</p>
+                </div>
+                <blockquote class="feedback-content">
+                    <h3>{{alumni_review.slogan}}</h3>
+                    <p>{{alumni_review.feedback_text}}</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="instruction" class="contacts">
+        <div class="container">
+            <h2 class="contacts-title">Обратная связь</h2>
+            <form action="{% url 'start_page' %}" class="contacts-form" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td class="title"><label for="fullname">ФИО:</label></td>
+                        <td class="field">
+                            <input type="text" id="fullname" name="fullname" placeholder="Представьтесь, пожалуйста" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title"><label for="age">Возраст:</label></td>
+                        <td class="field">
+                            <input type="text" id="age" name="age" placeholder="Укажите возраст, хотя бы приблизительно" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title"><label for="sex">Пол: </label></td>
+                        <td class="field">
+                            <label><input type="radio" id="man" value="man" name="sex" required>Мужской</label>
+                            <label><input type="radio" id="woman" value="woman" name="sex" required>Женский</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title"><label for="message">Сообщение:</label></td>
+                        <td class="field">
+                            <textarea type="text" id="message" name="message" placeholder="Сообщите всё, что считаете нужным" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title"></td>
+                        <td class="field">
+                            <input type="submit" class="btn btn-green" name="send" value="Отправить">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <div class="contacts-instruction">
+                <h3>Заинтересовались обучением на нашей кафедре?</h3>
+                <p>Заполните короткую форму обратной связи и отправьте нам.</p>
+                <p>Мы подготовим для вас индивидуальное предложение и выйдем на связь!</p>
+                <p class="contacts-alert"><strong>Внимание!</strong>
+                    Все поля обязательны для заполнения.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts" class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+
+                <div class="footer-address">
+                    <div class="logo">
+                        <img src="{% static 'img/logo-footer.png' %}" width="180" height="81" alt="A+">
+                    </div>
+                    <p>153000, г. Иваново,<br> Шереметевский пр., д.21</p>
+                </div> 
+
+                <div class="footer-menu">
+                    <h3>Обучение</h3>
+                    <ul>
+                        <li><a href="#">Расписание</a></li>
+                        <li><a href="#">Предметы</a></li>
+                        <li><a href="#">Практика</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-menu">
+                    <h3>Выпускники</h3>
+                    <ul>
+                        <li><a href="#">Достижения</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Найти</a></li>
+                    </ul>
+                </div>
+            
+                <div class="footer-menu">
+                    <h3>Как поступить</h3>
+                    <ul>
+                        <li><a href="#">На коммерцию</a></li>
+                        <li><a href="#">Целевой набор</a></li>
+                        <li><a href="#">На бюджет</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-menu">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Схема проезда</a></li>
+                        <li><a href="#">Телефон/факс</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="copyright">Все права защищены 2015</div>
+                    <div class="footer-social-promo">Подписчикам в соц. сетях - скидки на обучение!</div>
+                    <div class="footer-social">
+                        <a href="#"><img src="{% static 'img/ico-vk-active.png' %}" alt="VK"></a>
+                        <a href="#"><img src="{% static 'img/ico-fb-active.png' %}" alt="Facebook"></a>
+                        <a href="#"><img src="{% static 'img/ico-tw-active.png' %}" alt="Twitter"></a>
+                    </div>
+                </div>
+
+            </div>   
+        </div>
+    </footer>
+
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title">Поздравляем!</h3>
+                <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    Заявка успешно отправлена
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
+            console.log(scrollbar);
+            document.querySelector('[href="#openModal"]').addEventListener('click', function () {
+                document.body.style.overflow = 'hidden';
+                document.querySelector('#openModal').style.marginLeft = scrollbar;
+            });
+            document.querySelector('[href="#close"]').addEventListener('click', function () {
+                document.body.style.overflow = 'visible';
+                document.querySelector('#openModal').style.marginLeft = '0px';
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    background-color: #1E1E1E;
+}
+.screen-container {
+    width: 428px;
+    height: 926px;
+    margin: auto;
+    background: #ffffff;
+}
+
+/* фон */
+.gradient-line-1 {
+    background-color: #3E1C03;
+    height: 58px;
+}
+.gradient-line-2 {
+    background-color: #883C05;
+    height: 89px;
+}
+.gradient-line-3 {
+    background-color: #BC4F00;
+    height: 146px;
+}
+.gradient-line-4 {
+    background-color: #E06D1A;
+    height: 197px;
+}
+.auth-form {
+    background-color: #FFFFFF;
+    width: 320px;
+    height: 180px;
+    border: 1px solid #000000;
+    border-radius: 0px 76px 76px 0px;
+    padding: 19px 0px 0px 42px;
+    transform: translateY(-76px);
+    border-left: none;
+}
+footer {
+    margin: 20px 0px 58px 38px;
+}
+.msg-danger {
+    background-color: #D70000;
+    text-align: center;
+    padding: 12px 0px;
+}
+
+/* тексты */
+.gradient-line-3 h1 {
+    color: #FFFFFF;
+    font-family: Jura;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600; 
+    line-height: 50px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    padding: 21px 25px 0px 42px;
+}
+.form-field {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #606060;
+    color: #A3A3A3;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 9px 11px;
+    outline: none;
+    margin-top: 20px;
+}
+.msg-danger p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+}
+
+/* кнопки */
+.form-btn {
+    background-color: #FFFFFF;
+    width: 82px;
+    height: 82px;
+    border: 3px solid #606060;
+    border-radius: 45px;
+    margin-left: 240px;
+    transform: translateY(24px);
+}
+.form-btn:active {
+    background-color: #248E3B;
+}
+.light-btn {
+    border: 1px solid #000000;
+    border-radius: 25px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    padding: 11px 20px;
+    margin-right: 12px;
+}
+.light-btn:active {
+    background-color: #A3A3A3;
+}

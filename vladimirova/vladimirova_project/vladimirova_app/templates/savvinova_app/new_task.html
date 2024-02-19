@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/new_task_styles.css' %}">
+    <title>Задача</title>
+</head>
+<body>
+  <section class="screen-container">
+    <header>
+      <div class="gradient-line-1"></div>
+      <div class="gradient-line-2">
+        <h2>{{account.name}}</h2>
+        <a class="header-btn" href="{% url 'index' %}"><img src="{% static 'img/door.svg' %}" alt=""></a>        
+      </div>
+      <div class="gradient-line-3">
+        <h2>Новая задача</h2>
+        <a class="header-btn" href="{% url 'plan' account.id %}"><img src="{% static 'img/cross.svg' %}" alt=""></a>        
+      </div>
+    </header>
+    <div class="new-task-form">
+			<form action="" method="post">
+				{% csrf_token %}
+        <div class="new-task-form-fields">
+          <textarea class="form-field" name="field_task_body" id="" cols="30" rows="2" placeholder="формулировка" required></textarea>
+          <input class="form-field" id="field_deadline" type="date" name="field_deadline" value=""  required>
+          <label class="deadline-label" for="field_deadline">крайний срок</label>
+          <label class="task-selector-label" for="task_selector">привязка к задаче</label>
+          <select class="task-selector" id="task_selector" name="parent_task"> 
+            <option>-</option>
+            {% for task in parent_tasks %}
+              <option>{{task}}</option>
+            {% endfor %}
+          </select>
+        </div>
+				<button class="form-btn" name="task_create_btn" value="" type="submit">
+					<img src="{% static 'img/marker.svg' %}" alt="">
+				</button>
+      </form>
+		</div>
+    {% if msg_danger %}
+			<div class="msg-danger"><p>{{msg_danger}}</p></div> 
+    {% elif msg_success %}
+      <div class="msg-success"><p>{{msg_success}}</p></div> 
+		{% endif %}
+  </section>
+</body>
+</html>

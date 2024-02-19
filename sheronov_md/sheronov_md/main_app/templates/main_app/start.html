@@ -1,0 +1,35 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>sheronov</title>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas_menu">
+            <h1>Холсты</h1>
+
+            {% if canvas_list %}
+                <nav>
+                    {% for i in canvas_list %}
+                        <li>
+                            <a class="canvas-btn" href="{% url 'main' i.id %}">{{i.title}}</a>
+                            <a href="{% url 'delete_canvas' i.id %}">удалить</a>
+                        </li>
+                    {% endfor %}
+                </nav>
+            {% else %}
+                <p>отсутствуют</p>
+            {% endif %}
+
+            <a class="new_canvas-btn" href="{% url 'main' 0 %}">
+                <p>новый</p>
+            </a>
+        
+        </div>
+    </div>
+</body>
+</html>

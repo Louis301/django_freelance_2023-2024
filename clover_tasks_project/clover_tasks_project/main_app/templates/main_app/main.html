@@ -1,0 +1,32 @@
+{% load static %}    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Chernoyarova</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-icon">
+            <a href="{% url 'auth' %}"><img src="{% static 'img/logo.svg' %}" alt="логотип"></a>
+        </div>
+        <h1>Задачи</h1>
+        <form class="problems-list" action="{% url 'main' %}" method="post">
+            {% csrf_token %}
+            {% for problem in all_problems %}
+                <div class="problem-item">
+                    <p>{{problem.wording}}</p>
+                    <button type="submit" name="delete_btn" value="{{problem.id}}">
+                        <img src="{% static 'img/delete-btn.svg' %}" alt="кнопка удаления">
+                    </button>
+                </div>
+            {% endfor %}
+            <input class="new-problem" type="text" name="new_problem" placeholder="задача">
+            <button class="create-btn" type="submit" name="create_btn">добавить</button>
+        </form>
+    </div>
+
+</body>
+</html>

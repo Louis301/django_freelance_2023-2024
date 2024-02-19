@@ -1,0 +1,69 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>sheronov</title>
+</head>
+<body {{f_setCanvasParameters}}>
+    <div class="container">
+    
+        <canvas id="canvas" width="390px" height="520px"></canvas>
+    
+        <form action="{% url 'main' canvas_id %}" method="post">
+            {% csrf_token %}
+
+            <p class="panel-title">Цвет пера</p>
+            <div class="colors">
+                <input type="radio" class="color-btn black-btn" name="pen_color-btn" value="black"  id="black"  onclick="setPenColor(this)">
+                    <div id="black-color-sample"></div>
+                </input>
+                <input type="radio" class="color-btn red-btn"   name="pen_color-btn" value="red"    id="red"    onclick="setPenColor(this)">
+                    <div id="red-color-sample"></div>
+                </input>
+                <input type="radio" class="color-btn green-btn" name="pen_color-btn" value="green"  id="green"  onclick="setPenColor(this)">
+                    <div id="green-color-sample"></div>
+                </input>
+                <input type="radio" class="color-btn blue-btn"  name="pen_color-btn" value="blue"   id="blue"   onclick="setPenColor(this)">
+                    <div id="blue-color-sample"></div>
+                </input>
+                <input type="radio" class="color-btn white-btn" name="pen_color-btn" value="white"  id="white"  onclick="setPenColor(this)">
+                    <div id="white-color-sample"></div>
+                </input>
+            </div>
+            <p class="panel-title">Толщина пера</p>
+            <div class="colors">
+                <input type="radio" class="pen_width-btn" name="pen_width-btn" value="1" id="1" onclick="setPenWidth(this)">1</input>
+                <input type="radio" class="pen_width-btn" name="pen_width-btn" value="2" id="2" onclick="setPenWidth(this)">2</input>
+                <input type="radio" class="pen_width-btn" name="pen_width-btn" value="3" id="3" onclick="setPenWidth(this)">3</input>
+                <input type="radio" class="pen_width-btn" name="pen_width-btn" value="4" id="4" onclick="setPenWidth(this)">4</input>
+                <input type="radio" class="pen_width-btn" name="pen_width-btn" value="5" id="5" onclick="setPenWidth(this)">5</input>
+            </div>
+            <p class="panel-title">Управление</p>
+            <div>
+                <button type="submit" name="save_canvas_btn" value="pushed" class="control_btn control_btn-1">
+                    <img src="{% static 'img/save.svg' %}" alt="сохранение">
+                </button>
+            </div>  
+        </form>
+
+        <div class="control-panel">
+            <button class="control_btn">
+                <a href="{% url 'start' %}">
+                    <img src="{% static 'img/home.svg' %}" alt="дом">
+                </a>
+            </button>
+            <button class="control_btn">
+                <a href="{% url 'main' canvas_id %}">
+                    <img src="{% static 'img/clear_canvas.svg' %}" alt="швабра">
+                </a>
+            </button>
+        </div>    
+
+    </div>
+    <script src="{% static '/js/logic.js' %}"></script>
+</body>
+</html>
+

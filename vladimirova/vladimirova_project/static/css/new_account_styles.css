@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    background-color: #1E1E1E;
+}
+.screen-container {
+    width: 428px;
+    height: 926px;
+    margin: auto;
+    background: #ffffff;
+}
+
+/* фон */
+.gradient-line-1 {
+    background-color: #3E1C03;
+    height: 35px;
+}
+.gradient-line-2 {
+    background-color: #883C05;
+    height: 53px;
+}
+.gradient-line-3 {
+    background-color: #E06D1A;
+    padding: 22px 41px;
+}
+.registration-form {
+    margin-bottom: 30px;
+}
+.registration-form-fields {
+    border: 1px solid #000000;
+    margin: 105px 52px 0px 21px;
+    padding: 20px 42px 77px 42px;
+    border-radius: 0px 71px 0px 0px;
+}
+.agreement-accept-text {
+    position: relative;
+    display: inline-block; 
+    margin-left: 12px;
+}
+.msg-danger {
+    background-color: #D70000;
+    text-align: center;
+    padding: 12px 0px;
+}
+.msg-success {
+    background-color: #057D1F;
+    text-align: center;
+    padding: 12px 0px;
+}
+
+/* тексты */
+.form-field {
+    width: 246px;
+    border: none;
+    border-bottom: 1px solid #606060;
+    color: #A3A3A3;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 9px 11px;
+    outline: none;
+    margin-top: 20px;
+}
+.gradient-line-3 h2 {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+.agreement-accept-text p {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+.msg-danger p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+}
+.msg-success p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+}
+
+/* кнопки */
+.back-btn {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #E06D1A;
+    border-radius: 65px;
+    padding: 8px;
+    padding-top: 10px;
+    text-align: center;
+    margin-left: 168px;
+}
+.back-btn:active {
+    border: 1px solid #000000;
+}
+.form-btn {
+    background-color: #FFFFFF;
+    width: 82px;
+    height: 82px;
+    border: 3px solid #606060;
+    border-radius: 45px;
+    margin-left: calc(100% - 103px);
+    margin-top: -43px;
+}
+.form-btn:active {
+    background-color: #248E3B;
+}
+.agreement-accept-check {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+    margin-left: 46px;
+    transform: translateY(-10px);
+}

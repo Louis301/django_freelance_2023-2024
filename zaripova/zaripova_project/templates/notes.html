@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Коллекция</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-screen-title">Коллекция</div>
+        <section class="check-list">
+            {% for photo in all_photos %}
+                <div class="check-list-item">
+                    <img class="check-list-item-img" src="{{photo.photo}}" alt="photo">
+                    <div class="check-list-item-text">
+                        <h2>{{photo.title}}</h2>
+                        <p><b>Категория: </b>{{photo.category}}</p>
+                        <p><b>Впечатление: </b>"{{photo.comment}}"</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>   
+        <a class="main-screen-btn notes-screen-btn-to-home" href="{% url 'main' %}">На главную</a>
+    </div>  <!-- container -->
+</body>
+</html>

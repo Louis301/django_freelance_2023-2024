@@ -1,0 +1,177 @@
+.container {
+    width: 390px;
+    height: 860px;
+    max-width: 390px;
+    max-height: 860px;
+    border-radius: 40px;
+    padding: 67px 14px 62px 14px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #000000;
+    color: #ffffff;
+    margin: 0 auto;
+}
+canvas {
+    position: relative;
+    background-color: #ffffff;
+}
+.colors {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 47px;
+    margin: 0 auto;
+}
+.reset-btn {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+.canvas_menu {
+    position: relative;
+    background-color: #fff;
+    height: 800px;
+    padding: 20px;
+}
+.canvas_menu h1 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+    color: #000;
+}
+.new_canvas-btn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    color: #000;
+}
+.new_canvas-btn p {
+    margin-top: 70px;
+    border: 1px solid #000;
+    padding-bottom: 20px;
+}
+
+.canvas_menu nav {
+    margin-top: 70px;
+}
+.canvas_menu nav li {
+    margin-bottom: 30px;
+}
+.canvas-btn {
+    text-decoration: none;
+    font-size: 28px;
+    color: #000;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.canvas_menu p {
+    font-size: 24px;
+    padding-top: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.panel-title {
+    padding-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.control-panel {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 170px;
+    transform: translateY(-100%);
+}
+.control_btn {
+    width: 55px;
+    height: 55px;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    background-color: #000000;
+}
+.control_btn a img {
+    width: 32px; 
+    height: 32px;
+}
+
+.control_btn:hover { cursor: pointer; }
+.control_btn:active { border: 5px solid #ffffff; }
+
+.pen_width-btn {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+}
+
+.pen_width-btn:hover { cursor: pointer; }
+.pen_width-btn:active { border: 5px solid #ffffff; }
+
+.control_btn img {
+    width: 32px; 
+    height: 32px;
+    text-align: center;
+}
+
+
+#white-color-sample {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+#black-color-sample {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: black;
+}
+#green-color-sample {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: green;
+}
+#blue-color-sample {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: blue;
+}
+#red-color-sample {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: red;
+}
+
+
+.color-btn {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    background-color: #000000;
+}
+.color-btn:hover { cursor: pointer; }
+.color-btn:active { border: 5px solid #ffffff; }
+.red-btn { background-color: #ff0000; }
+.green-btn { background-color: #00ff00; }
+.blue-btn { background-color: #0000ff; }
+.white-btn { background-color: #ffffff; }
+
+
+.control_btn-1 {
+    margin-left: 30px;
+}

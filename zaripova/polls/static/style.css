@@ -1,0 +1,10 @@
+body {
+    background: url("/static/1.jpg") no-repeat; 
+    color: white;
+    padding: 40px;
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 48px;
+}

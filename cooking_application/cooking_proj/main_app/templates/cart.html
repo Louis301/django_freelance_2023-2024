@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Корзина</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cart-header"><p>Cart</p></div>
+        <p class="cart-header-ru">Корзина</p>
+        <div class="dishes">
+            {% for dish in dishes %}
+                <div class="dish-item">
+                    <div class="dish-item-img-and-price">
+                        <img class="dish-item-img" src="{% static 'media/' %}{{dish.photo}}" alt="{{dish.photo}}">
+                        <p class="dish-price">{{dish.price}}<span> р.</span></p>
+                    </div>
+                    <div class="dish-item-text">
+                        <p class="dish-item-title">{{dish.title}}</p>
+                        <p class="dish-item-description dish-item-description-cart">{{dish.description}}</p>
+                        {% if dish.for_an_order %}
+                            <a class="select-order-btn" href="{% url 'mark_for_order' dish.id %}"><div class="select-order-btn-active">X</div></a>
+                        {% else %}
+                            <a class="select-order-btn" href="{% url 'mark_for_order' dish.id %}"><div></div></a>
+                        {% endif %}
+                        {% if dish.for_an_order %}
+                            <a class="to-order-list-btn" href="{% url 'make_order' dish.id %}">Заказать</a>
+                        {% endif %}
+                    </div>
+                    <div class="quantity-control">
+                        <a href="{% url 'increment_dish_quantity' dish.id %}">
+                            <img src="{% static 'img/up_btn.svg' %}" alt="up_img">
+                        </a>
+                        <p>{{dish.quantity}}</p>
+                        <a href="{% url 'decrement_dish_quantity' dish.id %}">
+                            <img src="{% static 'img/down_btn.svg' %}" alt="down_img">
+                        </a>
+                    </div>
+                    <div class="remove-btn">
+                        <a href="{% url 'remove_from_cart' dish.id %}">
+                            <img src="{% static 'img/prohibition_img.svg' %}" alt="prohibition_img">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="to-order-list-big-btn" href="{% url 'make_order' %}"><div>сделать заказ</div></a>
+        <div class="navigation">
+            <a class="navigation-btn" href="{% url 'menu_path' %}">
+                <img src="{% static 'img/menu_img.svg' %}" alt="menu_img">
+            </a>
+            <a class="navigation-btn navigation-btn-selected" href="{% url 'cart_path' %}">
+                <img src="{% static 'img/cart_img.svg' %}" alt="cart_img">
+            </a>
+            <a class="navigation-btn" href="{% url 'orders_path' %}">
+                <img src="{% static 'img/orders_img.svg' %}" alt="orders_img">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
