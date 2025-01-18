@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Липухина_МР</title>
+</head>
+<body>
+  <div class="container">
+    <img class="img-logo" src="{% static 'img/лого_имг.png' %}" alt="logo">
+    <p class="msg-error">{{msg}}</p>    
+    <form action="{% url 'authorize' %}" method="post">
+      {% csrf_token %}
+      <input class="form-field-default" type="text" name="login" placeholder="Логин" value="{{login}}" required>
+      <input class="form-field-default" type="text" name="password" placeholder="Пароль" value="{{password}}" required>
+      <input class="btn-send" type="submit" name="btn_entering" value="войти">
+      <a class="btn-registration" href="{% url 'registration' %}">регистрация</a>
+    </form>        
+  </div>  
+</body>
+</html>

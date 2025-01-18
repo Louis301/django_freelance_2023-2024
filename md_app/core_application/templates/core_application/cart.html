@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Липухина_МР</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/меню_икн.svg' %}" alt=""></a>
+      <h2>Корзина</h2>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/телефон_икн.svg' %}" alt=""></a>
+    </header>
+    <form action="{% url 'cart'  %}" method="post">
+      {% csrf_token %}
+      <div class="cart">
+        {% for prod in products %}
+          <div class="cart-item">
+            <img src="{% static 'img/крендель_имг.svg' %}" alt="">
+            <div>
+              <p class="product-title">{{prod.title}}</p>
+              <p class="product-price-2">{{prod.price}} р.</p>
+              <a class="detail-btn" href="#">Подробнее</a>
+            </div>            
+          </div>
+        {% endfor %}
+      </div>
+      <input class="btn-send" type="submit" name="btn_save" value="к оформлению">
+    </form>
+    <footer>
+      <a class="btn-icn" href="{% url 'main' %}">
+        <div class="footer-item">
+          <img src="{% static 'icn/дом_икн.svg' %}" alt="">
+          <p>Главная</p>  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'catalog' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/каталог_икн.svg' %}" alt="">
+          <p>Каталог</p>                  
+        </div>
+      </a>
+      <a class="btn-icn" href="{% url 'cart' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/заказы_икн.svg' %}" alt="">
+          <p>Корзина</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'profile' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/профиль_икн.svg' %}" alt="">
+          <p>Профиль</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'about' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/о нас_икн.svg' %}" alt="">
+          <p>О нас</p>                  
+        </div>
+      </a>      
+    </footer>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Липухина_МР</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/меню_икн.svg' %}" alt=""></a>
+      <h2>Профиль</h2>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/телефон_икн.svg' %}" alt=""></a>
+    </header>
+
+    <div class="btn-back"><a href="{% url 'authorize' %}">выход</a></div>    
+    <form action="{% url 'profile' %}" method="post">
+        {% csrf_token %}
+        <input class="form-field-default" type="text" name="fio" value="{{fio}}" placeholder="ФИО" required>
+        <input class="form-field-default" type="text" name="phone" value="{{phone}}" placeholder="Телефон" required>
+        <input class="form-field-default" type="text" name="email" value="{{email}}" placeholder="E-mail" required>
+        <input class="form-field-default" type="text" name="delivery_address" value="{{delivery_address}}" placeholder="Адрес доставки" required>
+        <input class="form-field-default" type="text" name="login" value="{{login}}" placeholder="Логин" required>
+        <input class="form-field-default" type="text" name="password" value="{{password}}" placeholder="Пароль" required>
+        <input class="btn-send" type="submit" name="btn_save" value="сохранить">
+    </form>    
+    <p class="msg-error">{{msg}}</p>
+
+    <footer>
+      <a class="btn-icn" href="{% url 'main' %}">
+        <div class="footer-item">
+          <img src="{% static 'icn/дом_икн.svg' %}" alt="">
+          <p>Главная</p>  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'catalog' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/каталог_икн.svg' %}" alt="">
+          <p>Каталог</p>                  
+        </div>
+      </a>
+      <a class="btn-icn" href="{% url 'cart' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/заказы_икн.svg' %}" alt="">
+          <p>Корзина</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'profile' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/профиль_икн.svg' %}" alt="">
+          <p>Профиль</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'about' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/о нас_икн.svg' %}" alt="">
+          <p>О нас</p>                  
+        </div>
+      </a>      
+    </footer>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Липухина_МР</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/меню_икн.svg' %}" alt=""></a>
+      <h2>Главная</h2>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/телефон_икн.svg' %}" alt=""></a>
+    </header>
+    <img class="img-logo-2" src="{% static 'img/лого_имг.png' %}" alt="logo">
+    <div class="main-btns">      
+      <a class="btn-icn" href="{% url 'catalog' %}">
+        <div class="main-btns-item">
+          <img src="{% static 'icn/каталог_икн.svg' %}" alt="">
+          <p>Каталог товаров</p>  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'cart' %}">
+        <div class="main-btns-item">
+          <img src="{% static 'icn/заказы_икн.svg' %}" alt="">
+          <p>Мои заказы</p>  
+        </div>
+      </a>      
+    </div>
+    <p class="best-products-p">Лучшие товары</p>    
+    <div class="best-products">
+      {% for prod in products %}      
+        <div class="best-products-item">
+          <img class="img-product" src="{% static 'img/крендель_имг.svg' %}" alt="">
+          <p class="product-price">{{prod.price}} p</p>          
+          {% if prod.in_cart %}
+            <div class="btn-in-cart"><a href="{% url 'main' prod.id %}">В корзину</a></div>
+          {% else %}
+            <div class="btn-to-cart"><a href="{% url 'main' prod.id %}">В корзину</a></div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <footer>
+      <a class="btn-icn" href="{% url 'main' %}">
+        <div class="footer-item">
+          <img src="{% static 'icn/дом_икн.svg' %}" alt="">
+          <p>Главная</p>  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'catalog' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/каталог_икн.svg' %}" alt="">
+          <p>Каталог</p>                  
+        </div>
+      </a>
+      <a class="btn-icn" href="{% url 'cart' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/заказы_икн.svg' %}" alt="">
+          <p>Корзина</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'profile' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/профиль_икн.svg' %}" alt="">
+          <p>Профиль</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'about' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/о нас_икн.svg' %}" alt="">
+          <p>О нас</p>                  
+        </div>
+      </a>      
+    </footer>
+  </div>
+</body>
+</html>

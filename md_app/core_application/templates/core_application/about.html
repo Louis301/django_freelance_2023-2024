@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Липухина_МР</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/меню_икн.svg' %}" alt=""></a>
+      <h2>Профиль</h2>
+      <a class="btn-icn" href="#"><img src="{% static 'icn/телефон_икн.svg' %}" alt=""></a>
+    </header>
+
+    <div class="about-rows">
+      <div class="about-rows-item">        
+        <p>Телефон: <span>+7 819 278 01 78</span></p>
+        <img src="{% static 'icn/телефон_икн.svg' %}" alt="">
+      </div>
+      <div class="about-rows-item">
+        <p>Адрес: <span>г. Москва, Дмитровское шоссе 9</span></p>
+        <img src="{% static 'icn/адрес_икн.svg' %}" alt="">
+      </div>
+      <div class="about-rows-item">
+        <p>Почта: <span>pecarnya1cunf@mail.ru</span></p>
+        <img src="{% static 'icn/письмо_икн.svg' %}" alt="">
+      </div>
+      <div class="about-rows-item">
+        <p>Сайт: <span>pecarnya-1c-unf.ru</span></p>
+        <img src="{% static 'icn/глобус_икн.svg' %}" alt="">
+      </div>
+    </div>
+
+    <div class="about-btns">
+      <a href="https://vk.com/feed">
+        <img src="{% static 'img/вк_имг.svg' %}" alt="">
+      </a>
+      <a href="https://www.youtube.com/">
+        <img src="{% static 'img/ютуб_имг.svg' %}" alt="">
+      </a>
+    </div>
+
+    <footer>
+      <a class="btn-icn" href="{% url 'main' %}">
+        <div class="footer-item">
+          <img src="{% static 'icn/дом_икн.svg' %}" alt="">
+          <p>Главная</p>  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'catalog' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/каталог_икн.svg' %}" alt="">
+          <p>Каталог</p>                  
+        </div>
+      </a>
+      <a class="btn-icn" href="{% url 'cart' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/заказы_икн.svg' %}" alt="">
+          <p>Корзина</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'profile' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/профиль_икн.svg' %}" alt="">
+          <p>Профиль</p>                  
+        </div>
+      </a>      
+      <a class="btn-icn" href="{% url 'about' %}">
+        <div class="footer-item">        
+          <img src="{% static 'icn/о нас_икн.svg' %}" alt="">
+          <p>О нас</p>                  
+        </div>
+      </a>      
+    </footer>
+  </div>  
+</body>
+</html>
